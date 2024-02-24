@@ -1,3 +1,0 @@
-[run]
-  [run.onchange]
-    command = ["~/.local/share/chezmoi/run_onchange_hello.sh"]

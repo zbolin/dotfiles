@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 install_on_fedora() {
