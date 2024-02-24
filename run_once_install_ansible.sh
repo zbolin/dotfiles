@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Ansible script finished."
+echo "Ansible script finished!"
