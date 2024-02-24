@@ -14,7 +14,7 @@
         remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
 
     - name: Install packages
-      ansible.builtin.dnf:
+      ansible.builtin.package:
         name:
           - git
           - vim
@@ -30,7 +30,7 @@
         shell: /usr/bin/zsh
 
     - name: Install VS Code
-      ansible.builtin.dnf:
+      ansible.builtin.package:
         name: code
         state: present
 
