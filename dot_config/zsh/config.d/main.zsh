@@ -17,8 +17,8 @@ DISABLE_LS_COLORS="true"
 plugins=(
     aws
     git
-    #zsh-syntax-highlighting
-    #zsh-autosuggestions
+    zsh-syntax-highlighting
+    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
