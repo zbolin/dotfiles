@@ -23,7 +23,18 @@
           - unzip
         state: present
 
+
     - name: Change shell to zsh
       ansible.builtin.user:
         name: "{{ remote_regular_user }}"
         shell: /usr/bin/zsh
+
+    - name: Change default shell to Zsh
+      ansible.builtin.user:
+        name: "{{ ansible_env.SUDO_USER or ansible_env.USER }}"
+        shell: /bin/zsh
+      when: "'/usr/local/bin/zsh' not in ansible_user_shell"
+
+    - name: Reload Zsh configuration
+      ansible.builtin.command: "exec zsh"
+      when: "'/usr/local/bin/zsh' in ansible_user_shell"

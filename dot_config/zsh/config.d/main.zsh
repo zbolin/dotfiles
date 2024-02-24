@@ -2,6 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="/Users/z/Library/Python/3.9/bin:$PATH"
+export PATH=/snap/bin:$PATH
 #GIT_PROMPT_EXECUTABLE="haskell"
 #ZSH_THEME="zb"
 ZSH_THEME="agnoster"
@@ -16,8 +17,8 @@ DISABLE_LS_COLORS="true"
 plugins=(
     aws
     git
-    zsh-syntax-highlighting
-    zsh-autosuggestions
+    #zsh-syntax-highlighting
+    #zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
