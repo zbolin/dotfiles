@@ -19,6 +19,7 @@
           - zsh
           - fzf
           - tmux
+          - neovim
         state: present
 
     - name: Change shell to zsh
