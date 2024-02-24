@@ -1,0 +1,41 @@
+---
+- name: Machine setup
+  hosts: localhost
+  become: true
+  connection: local
+  gather_facts: true
+  vars:
+    flyctl_version: "0.1.130"
+    pulumi_version: "v3.94.2"
+
+  tasks:
+    - name: Get my user
+      ansible.builtin.set_fact:
+        remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
+
+    - name: Install packages
+      ansible.builtin.dnf:
+        name:
+          - git
+          - vim
+          - gh
+          - zsh
+          - fzf
+          - tmux
+        state: present
+
+    - name: Change shell to zsh
+      ansible.builtin.user:
+        name: "{{ remote_regular_user }}"
+        shell: /usr/bin/zsh
+
+    - name: Install VS Code
+      ansible.builtin.dnf:
+        name: code
+        state: present
+
+          #- name: Install Terraform
+          #  ansible.builtin.dnf:
+          #    name: terraform
+          #    state: present
+
