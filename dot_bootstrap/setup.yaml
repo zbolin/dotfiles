@@ -20,6 +20,7 @@
           - fzf
           - tmux
           - neovim
+          - unzip
         state: present
 
     - name: Change shell to zsh

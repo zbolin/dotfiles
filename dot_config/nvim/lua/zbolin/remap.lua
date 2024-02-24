@@ -1,0 +1,22 @@
+local nnoremap = require("zbolin.keymap").nnoremap
+local tnoremap = require("zbolin.keymap").tnoremap
+nnoremap("<leader>fb", "<cmd>Telescope buffers<cr>")
+nnoremap("<C-j>fb", "<cmd>Telescope buffers<cr>")
+nnoremap("<leader>ff", "<cmd>Telescope find_files<cr>")
+nnoremap("<leader>fh", "<cmd>Telescope help_tags<cr>")
+--nnoremap("<leader>h", ":NERDTreeFocus<cr>")
+--nnoremap("<leader>t", ":NERDTreeFocus<cr>")
+nnoremap("<leader>h", "<C-W>h")
+nnoremap("<leader>j", "<C-W>j")
+nnoremap("<leader>k", "<C-W>k")
+nnoremap("<leader>l", "<C-W>l")
+nnoremap("<leader>t", ":NERDTreeToggle<CR>")
+--nnoremap("<leader>t", "<cmd>Ex<CR>") 
+nnoremap("<leader>x", "<cmd>Ex<CR>") 
+nnoremap("<leader>c", ":ChecklistToggleCheckbox<cr>")
+nnoremap("<leader>+", ":vsp<cr>")
+nnoremap("<C-C>", '"+y')
+
+nnoremap("<F7>", ":FloatermNew --wintype=split --height=0.3<CR>")
+nnoremap("<F8>", ":FloatermNew --wintype=vsplit --height=0.5<CR>")
+nnoremap("<F12>", ":FloatermNew --wintype=split --height=0.3<CR>")
