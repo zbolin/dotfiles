@@ -34,10 +34,10 @@ return require('packer').startup(function(use)
         --vim.cmd("colorscheme aura-dark") -- Or any Aura theme available
       end
     }
-    use {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        "neovim/nvim-lspconfig",
-    }
+    --use {
+    --    "williamboman/mason.nvim",
+    --    "williamboman/mason-lspconfig.nvim",
+    --    "neovim/nvim-lspconfig",
+    --}
 
 end)
