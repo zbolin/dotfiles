@@ -20,11 +20,31 @@
           - tmux
           - neovim
           - unzip
-          - python3-pip  # Install pip for AWS CLI
+          - python3-pip  # Install pip for AWS CLI v2
         state: present
 
-    - name: Install AWS CLI
-      ansible.builtin.command: "pip3 install awscli"
+    - name: Download and install AWS CLI v2
+      ansible.builtin.get_url:
+        url: "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip"
+        dest: "/tmp/awscliv2.zip"
+      register: download_result
+
+    - name: Unzip AWS CLI v2
+      ansible.builtin.unarchive:
+        src: "/tmp/awscliv2.zip"
+        dest: "/tmp"
+      when: download_result.changed
+
+    - name: Install AWS CLI v2
+      ansible.builtin.command: "/tmp/aws/install"
+      args:
+        creates: "/usr/local/bin/aws"
+
+    - name: Clean up temporary files
+      ansible.builtin.file:
+        path: "/tmp/awscliv2.zip"
+        state: absent
+      when: download_result.changed
 
     - name: Change shell to zsh
       ansible.builtin.user:
