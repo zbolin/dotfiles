@@ -1,0 +1,6 @@
+[default]
+region = us-east-1
+output = json
+[profile aws2024]
+region = us-east-2
+output = json
