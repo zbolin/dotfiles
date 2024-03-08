@@ -1,4 +1,3 @@
----
 - name: Machine setup
   hosts: localhost
   become: true
@@ -21,8 +20,11 @@
           - tmux
           - neovim
           - unzip
+          - python3-pip  # Install pip for AWS CLI
         state: present
 
+    - name: Install AWS CLI
+      ansible.builtin.command: "pip3 install awscli"
 
     - name: Change shell to zsh
       ansible.builtin.user:
